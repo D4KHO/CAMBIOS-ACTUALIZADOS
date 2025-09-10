@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let filteredBlogCards = [];
     
     // URL base de la API
-    const API_BASE_URL = 'http://localhost:5000';
+    const API_BASE_URL = 'https://casabonita.pe/admin_blog';
     
     // Filtros activos
     let activeFilters = {

@@ -31,7 +31,7 @@ function handleFormSubmit(event) {
         return;
     }
 
-    const requiredFields = ['nombre', 'dni', 'telefono', 'grupoFamiliar', 'ingresoMensual'];
+    const requiredFields = ['nombre', 'dni', 'telefono'];
     const missingFields = requiredFields.filter(field => !data[field]);
 
     if (missingFields.length > 0) {
@@ -46,8 +46,6 @@ function handleFormSubmit(event) {
 - DNI: ${data.dni}
 - Teléfono: ${data.telefono}
 - Email: ${data.email || 'No proporcionado'}
-- Grupo familiar: ${getGroupFamiliarText(data.grupoFamiliar)}
-- Ingreso mensual: ${data.ingresoMensual}
 - Mensaje: ${data.mensaje || 'Sin mensaje adicional'}
 
 ¿Podrían brindarme más información?`;
@@ -63,19 +61,6 @@ function handleFormSubmit(event) {
     form.reset();
 
     return false;
-}
-
-
-function getGroupFamiliarText(value) {
-    const options = {
-        'pareja-sin-hijos': 'Pareja sin hijos',
-        'familia-con-hijos': 'Familia con hijos',
-        'padre-madre-soltero': 'Padre o madre soltero/a',
-        'hermanos-menores': 'Hermanos menores a cargo',
-        'padres-a-cargo': 'Padres a cargo',
-        'abuelos-a-cargo': 'Abuelos a cargo'
-    };
-    return options[value] || value;
 }
 
 function showToast(message, type = 'info') {
@@ -383,6 +368,17 @@ function trackEvent(eventName, parameters = {}) {
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Solución simple para el video en iOS
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo) {
+        // Prevenir toques en el video en móviles
+        heroVideo.style.pointerEvents = 'none';
+        
+        // Prevenir el menú contextual y controles
+        heroVideo.addEventListener('contextmenu', e => e.preventDefault());
+        heroVideo.addEventListener('click', e => e.preventDefault());
+    }
+
     // Initialize animations and effects
     animateOnScroll();
     animateCounters();
@@ -767,6 +763,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastScrollTop = 0;
     let isScrolling = false;
     let wasScrolled = false; // Rastrear el estado anterior
+    let lastHideToggle = 0;
+    const HIDE_THRESHOLD = 60; // px scrolled before toggling hide/show
+    const HIDE_DEBOUNCE = 120; // ms between toggles to avoid flicker
 
     function handleHeaderScroll() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -797,9 +796,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Optimizar el rendimiento usando requestAnimationFrame
     window.addEventListener('scroll', () => {
+        // Always schedule the base handler for padding/appearance
         if (!isScrolling) {
             requestAnimationFrame(handleHeaderScroll);
             isScrolling = true;
+        }
+
+        // Additional mobile hide/show behavior: hide header when scrolling down fast
+        // and show when scrolling up. Use transform-only toggling for performance.
+        if (window.innerWidth <= 768 && header) {
+            const now = Date.now();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const delta = scrollTop - lastScrollTop;
+
+            // Only toggle if moved more than threshold and debounce time passed
+            if (Math.abs(delta) > HIDE_THRESHOLD && (now - lastHideToggle) > HIDE_DEBOUNCE) {
+                if (delta > 0 && scrollTop > 50) {
+                    // scrolling down -> hide
+                    header.classList.add('header-hidden');
+                } else if (delta < 0) {
+                    // scrolling up -> show
+                    header.classList.remove('header-hidden');
+                }
+                lastHideToggle = now;
+                // update lastScrollTop for next delta calculation
+                lastScrollTop = scrollTop;
+            }
         }
     });
 
