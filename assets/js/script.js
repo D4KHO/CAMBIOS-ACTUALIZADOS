@@ -763,9 +763,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastScrollTop = 0;
     let isScrolling = false;
     let wasScrolled = false; // Rastrear el estado anterior
-    let lastHideToggle = 0;
-    const HIDE_THRESHOLD = 60; // px scrolled before toggling hide/show
-    const HIDE_DEBOUNCE = 120; // ms between toggles to avoid flicker
 
     function handleHeaderScroll() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -796,32 +793,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Optimizar el rendimiento usando requestAnimationFrame
     window.addEventListener('scroll', () => {
-        // Always schedule the base handler for padding/appearance
         if (!isScrolling) {
             requestAnimationFrame(handleHeaderScroll);
             isScrolling = true;
-        }
-
-        // Additional mobile hide/show behavior: hide header when scrolling down fast
-        // and show when scrolling up. Use transform-only toggling for performance.
-        if (window.innerWidth <= 768 && header) {
-            const now = Date.now();
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const delta = scrollTop - lastScrollTop;
-
-            // Only toggle if moved more than threshold and debounce time passed
-            if (Math.abs(delta) > HIDE_THRESHOLD && (now - lastHideToggle) > HIDE_DEBOUNCE) {
-                if (delta > 0 && scrollTop > 50) {
-                    // scrolling down -> hide
-                    header.classList.add('header-hidden');
-                } else if (delta < 0) {
-                    // scrolling up -> show
-                    header.classList.remove('header-hidden');
-                }
-                lastHideToggle = now;
-                // update lastScrollTop for next delta calculation
-                lastScrollTop = scrollTop;
-            }
         }
     });
 
