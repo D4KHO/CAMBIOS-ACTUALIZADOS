@@ -766,7 +766,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleHeaderScroll() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const isCurrentlyScrolled = scrollTop > 100;
+        const isCurrentlyScrolled = scrollTop > 0; // Cambio de 100 a 0 para activación inmediata
 
         // Detectar cambio de estado
         const stateChanged = wasScrolled !== isCurrentlyScrolled;
