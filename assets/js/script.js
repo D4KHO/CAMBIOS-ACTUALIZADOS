@@ -934,63 +934,6 @@ document.addEventListener('DOMContentLoaded', function () {
     updateScrollProgress();
 });
 
-// ============================================================================
-// MODELO 3D - SOLO DESKTOP
-// ============================================================================
-
-// Función para detectar si es móvil
-function isMobile() {
-    return window.innerWidth <= 768;
-}
-
-// Función para inicializar modelo 3D (solo desktop)
-function initModel3D() {
-    // Solo cargar en desktop
-    if (isMobile()) {
-        return;
-    }
-
-    const modelViewer = document.getElementById('casa-model');
-
-    if (!modelViewer) return;
-
-    // Cargar el script de model-viewer solo si es desktop
-    if (!document.querySelector('script[src*="model-viewer"]')) {
-        const script = document.createElement('script');
-        script.type = 'module';
-        script.src = 'https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js';
-        document.head.appendChild(script);
-
-        script.onload = function () {
-            setupModelViewer();
-        };
-    } else {
-        setupModelViewer();
-    }
-}
-
-function setupModelViewer() {
-    const modelViewer = document.getElementById('casa-model');
-    if (!modelViewer) return;
-
-    // Configurar el modelo
-    modelViewer.src = 'assets/img/casa.glb'; // Asegúrate de tener el archivo 3D
-
-    modelViewer.addEventListener('load', function () {
-        modelViewer.style.opacity = '1';
-        // Ocultar el loading si existe
-        const loading = document.querySelector('.model-loading');
-        if (loading) loading.style.display = 'none';
-    });
-
-    modelViewer.addEventListener('error', function () {
-        console.warn('Error cargando modelo 3D, mostrando imagen estática');
-        // Mostrar imagen de fallback en caso de error
-        const errorSlot = modelViewer.querySelector('[slot="error"]');
-        if (errorSlot) errorSlot.style.display = 'block';
-    });
-}
-
 // Lazy loading para imágenes de fondo
 function initLazyBackgrounds() {
     const bgElements = document.querySelectorAll('[data-bg-src]');
@@ -1078,9 +1021,6 @@ function optimizeLazyImages() {
 
 // Inicializar modelo 3D cuando el DOM esté listo y manejar cambios de tamaño
 document.addEventListener('DOMContentLoaded', function () {
-    // Inicializar modelo 3D solo en desktop
-    initModel3D();
-
     // Inicializar lazy loading para backgrounds
     initLazyBackgrounds();
 
@@ -1090,18 +1030,5 @@ document.addEventListener('DOMContentLoaded', function () {
     // Listener para cambios de tamaño de ventana
     window.addEventListener('resize', function () {
         const showcaseImage = document.querySelector('.showcase-image');
-
-        if (isMobile()) {
-            // Ocultar completamente en móvil
-            if (showcaseImage) showcaseImage.style.display = 'none';
-        } else {
-            // Mostrar en desktop
-            if (showcaseImage) showcaseImage.style.display = 'block';
-            // Reinicializar modelo si es necesario
-            const modelViewer = document.getElementById('casa-model');
-            if (modelViewer && !modelViewer.src) {
-                initModel3D();
-            }
-        }
     });
 });
