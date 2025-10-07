@@ -1247,22 +1247,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/script.js" defer></script>
     
-    <!-- Script para manejar carga diferida de CSS sin inline handlers -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Convertir preload de Google Fonts a stylesheet
-            const fontsPreload = document.getElementById('fonts-preload');
-            if (fontsPreload) {
-                fontsPreload.rel = 'stylesheet';
-            }
-            
-            // Convertir preload de Swiper CSS a stylesheet
-            const swiperPreload = document.getElementById('swiper-preload');
-            if (swiperPreload) {
-                swiperPreload.rel = 'stylesheet';
-            }
-        });
-    </script>
 </body>
 
 </html>

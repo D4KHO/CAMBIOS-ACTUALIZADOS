@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (heroVideo) {
         // Prevenir toques en el video en móviles
         heroVideo.style.pointerEvents = 'none';
-        
+
         // Prevenir el menú contextual y controles
         heroVideo.addEventListener('contextmenu', e => e.preventDefault());
         heroVideo.addEventListener('click', e => e.preventDefault());
@@ -1032,3 +1032,18 @@ document.addEventListener('DOMContentLoaded', function () {
         const showcaseImage = document.querySelector('.showcase-image');
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Convertir preload de Google Fonts a stylesheet
+    const fontsPreload = document.getElementById('fonts-preload');
+    if (fontsPreload) {
+        fontsPreload.rel = 'stylesheet';
+    }
+
+    // Convertir preload de Swiper CSS a stylesheet
+    const swiperPreload = document.getElementById('swiper-preload');
+    if (swiperPreload) {
+        swiperPreload.rel = 'stylesheet';
+    }
+})
