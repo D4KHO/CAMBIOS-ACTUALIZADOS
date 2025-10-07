@@ -24,7 +24,7 @@
 
     <!-- Preload critical resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-        as="style" onload="this.onload=null;this.rel='stylesheet'">
+        as="style" id="fonts-preload">
     <noscript>
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
@@ -34,7 +34,7 @@
 
     <!-- Swiper CSS cargado de forma diferida -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
+        id="swiper-preload">
     <noscript>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     </noscript>
@@ -1246,6 +1246,23 @@
     <!-- Cargar Swiper como defer para que no bloquee el parsing y mantener inicialización en DOMContentLoaded -->
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/script.js" defer></script>
+    
+    <!-- Script para manejar carga diferida de CSS sin inline handlers -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Convertir preload de Google Fonts a stylesheet
+            const fontsPreload = document.getElementById('fonts-preload');
+            if (fontsPreload) {
+                fontsPreload.rel = 'stylesheet';
+            }
+            
+            // Convertir preload de Swiper CSS a stylesheet
+            const swiperPreload = document.getElementById('swiper-preload');
+            if (swiperPreload) {
+                swiperPreload.rel = 'stylesheet';
+            }
+        });
+    </script>
 </body>
 
 </html>
