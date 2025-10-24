@@ -53,7 +53,7 @@ function handleFormSubmit(event) {
     const formatearRespuesta = (respuesta) => {
         if (respuesta === 'si') return 'Sí';
         if (respuesta === 'no') return 'No';
-        if (respuesta === 'no_seguro') return 'No estoy seguro(a)';
+        if (respuesta === 'no_seguro') return 'Tal vez';
         return respuesta;
     };
 

@@ -43,9 +43,8 @@
    ================================ */
 
 .eligibility-section {
-    margin: 20px 0;
     background: #f8f9fa;
-    padding: 20px;
+    padding: 1px 20px 20px;
     border-radius: 8px;
 }
 
@@ -84,7 +83,7 @@
 
 .radio-group {
     display: flex;
-    gap: 15px;
+    gap: 40px;
     margin-top: 10px;
     flex-wrap: wrap;
 }
@@ -98,7 +97,7 @@
 }
 
 .radio-group label:hover {
-    color: #3498db;
+    color: #e47835;
 }
 
 .radio-group input[type="radio"] {
@@ -106,22 +105,7 @@
     height: 18px;
     margin-right: 8px;
     cursor: pointer;
-    accent-color: #3498db;
-}
-
-.info-box {
-    background: #e8f4f8;
-    border-left: 4px solid #3498db;
-    padding: 12px;
-    margin-top: 15px;
-    border-radius: 4px;
-}
-
-.info-box p {
-    margin: 0;
-    color: #2c3e50;
-    font-size: 0.9em;
-    line-height: 1.6;
+    accent-color: #e47835;
 }
 
 #eligibilityResult {
@@ -158,5 +142,121 @@
     
     .eligibility-question label {
         font-size: 0.95em;
+    }
+}
+
+/* ================================
+   ESTILOS HOVER PARA BOTONES
+   ================================ */
+
+.btn-hero:hover {
+    background: #e47835 !important;
+}
+
+.btn-accent:hover {
+    background-color: #e47835 !important;
+}
+
+/* ================================
+   ESTILOS DEL FORMULARIO LANDING PAGE
+   ================================ */
+
+.landing-contacto-section {
+    padding: 3rem 0;
+    background: var(--white)
+}
+
+.landing-contacto-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem
+}
+
+.landing-form-card {
+    background: var(--white);
+    border-radius: .5rem;
+    box-shadow: var(--shadow-strong);
+    overflow: hidden
+}
+
+.landing-form-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--gray-medium)
+}
+
+.landing-form-header h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: .5rem
+}
+
+.landing-form-header p {
+    color: var(--gray-dark);
+    opacity: .8;
+    margin: 0
+}
+
+.landing-contact-form {
+    padding: 1.5rem
+}
+
+.landing-form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem
+}
+
+.landing-form-group {
+    display: flex;
+    flex-direction: column
+}
+
+.landing-form-group label {
+    font-weight: 500;
+    color: var(--gray-dark);
+    margin-bottom: .5rem
+}
+
+.landing-form-group input,
+.landing-form-group select,
+.landing-form-group textarea {
+    padding: .75rem;
+    border: 1px solid var(--gray-medium);
+    border-radius: .375rem;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+    resize: none;
+}
+
+.landing-form-group input:focus,
+.landing-form-group select:focus,
+.landing-form-group textarea:focus {
+    outline: 0;
+    border-color: var(--forest-green);
+    box-shadow: 0 0 0 3px hsl(152, 85%, 20%, .1)
+}
+
+.landing-form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+    margin-bottom: 1.5rem
+}
+
+.landing-form-checkbox input[type=checkbox] {
+    margin-top: .25rem
+}
+
+.landing-form-checkbox label {
+    font-size: .875rem;
+    color: var(--gray-dark);
+    opacity: .8;
+    line-height: 1.4
+}
+
+@media (min-width:768px) {
+    .landing-form-row {
+        grid-template-columns: repeat(2, 1fr)
     }
 }

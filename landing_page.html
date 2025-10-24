@@ -35,7 +35,7 @@
 
     <!-- Swiper CSS cargado de forma diferida -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style"
-            onload="this.onload=null;this.rel='stylesheet'">
+        onload="this.onload=null;this.rel='stylesheet'">
 
     <noscript>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -54,7 +54,7 @@
             <div class="header-content">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="landing_page.html">
                         <img src="assets/img/LOGO WEBP NEGRO.webp" alt="Casa Bonita Logo" class="logo-img" width="200"
                             height="80">
                     </a>
@@ -65,6 +65,7 @@
                 <nav class="desktop-nav">
                     <button onclick="scrollToSection('inicio')">Inicio</button>
                     <button onclick="scrollToSection('proyecto')">Proyecto</button>
+                    <button onclick="scrollToSection('contacto')">Contacto</button>
                 </nav>
 
                 <!-- CTA Button -->
@@ -404,21 +405,24 @@
             <!-- Sección principal con imagen y contenido -->
             <div class="project-showcase">
                 <div class="showcase-content">
-                        <div class="showcase-text">
-                            <h3>Tu propio espacio, con la ubicación que te conecta con lo mejor de Piura.</h3>
-                            <p>Casa Bonita Residencial combina la tranquilidad de vivir en un entorno natural con la
-                                comodidad de estar dentro del casco urbano de Piura. Nuestros lotes + módulos están
-                                estratégicamente ubicados para ofrecerte lo mejor de ambos mundos.</p>      
-                        </div>
+                    <div class="showcase-text">
+                        <h3>Tu propio espacio, con la ubicación que te conecta con lo mejor de Piura.</h3>
+                        <p>Casa Bonita Residencial combina la tranquilidad de vivir en un entorno natural con la
+                            comodidad de estar dentro del casco urbano de Piura. Nuestros lotes + módulos están
+                            estratégicamente ubicados para ofrecerte lo mejor de ambos mundos.</p>
                     </div>
+                </div>
 
-                    <!-- Mapa colocado debajo del texto (full-width) -->
-                    <div class="showcase-image">
-                        <div class="map-container" style="position: relative; width: 100%; height: 100%;">
-                            <!-- Mapa embebido de Google Maps en lugar del modelo 3D -->
-                           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100915.1017937254!2d-80.64956549987922!3d-5.218067272672257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f12.2!3m3!1m2!1s0x904a1700267ea87f%3A0xffcbd3eaa841dc8f!2sCasa%20Bonita%20Residencial!5e0!3m2!1ses-419!2spe!4v1758550220730!5m2!1ses-419!2spe" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
+                <!-- Mapa colocado debajo del texto (full-width) -->
+                <div class="showcase-image">
+                    <div class="map-container" style="position: relative; width: 100%; height: 100%;">
+                        <!-- Mapa embebido de Google Maps en lugar del modelo 3D -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100915.1017937254!2d-80.64956549987922!3d-5.218067272672257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f12.2!3m3!1m2!1s0x904a1700267ea87f%3A0xffcbd3eaa841dc8f!2sCasa%20Bonita%20Residencial!5e0!3m2!1ses-419!2spe!4v1758550220730!5m2!1ses-419!2spe"
+                            width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+                </div>
             </div>
         </div>
     </section>
@@ -628,8 +632,8 @@
         </div>
     </section>
 
-        <!-- Contacto Section -->
-    <section id="contacto" class="contacto-section">
+    <!-- Contacto Section -->
+    <section id="contacto" class="landing-contacto-section">
         <div class="container">
             <div class="section-header">
                 <h2>¡Contáctanos Ahora!</h2>
@@ -637,35 +641,35 @@
                     evaluar tu caso sin compromiso.</p>
             </div>
 
-            <div class="contacto-content">
+            <div class="landing-contacto-content">
 
                 <!-- Formulario -->
-                <div class="contact-form-container">
-                    <div class="form-card">
-                        <div class="form-header">
+                <div class="landing-contact-form-container">
+                    <div class="landing-form-card">
+                        <div class="landing-form-header">
                             <h3>Formulario de contacto</h3>
                             <p>Llena todos los campos para una evaluación más precisa</p>
                         </div>
-                        <form id="contactForm" class="contact-form">
-                            <div class="form-row">
-                                <div class="form-group">
+                        <form id="contactForm" class="landing-contact-form">
+                            <div class="landing-form-row">
+                                <div class="landing-form-group">
                                     <label for="nombre">Nombre completo *</label>
                                     <input type="text" id="nombre" name="nombre" required
                                         placeholder="Ej: Juan Pérez García">
                                 </div>
-                                <div class="form-group">
+                                <div class="landing-form-group">
                                     <label for="dni">DNI</label>
                                     <input type="text" id="dni" name="dni" required placeholder="12345678"
                                         maxlength="8">
                                 </div>
                             </div>
 
-                            <div class="form-row">
-                                <div class="form-group">
+                            <div class="landing-form-row">
+                                <div class="landing-form-group">
                                     <label for="telefono">Teléfono *</label>
                                     <input type="tel" id="telefono" name="telefono" required placeholder="946 552 086">
                                 </div>
-                                <div class="form-group">
+                                <div class="landing-form-group">
                                     <label for="email">Correo electrónico</label>
                                     <input type="email" id="email" name="email" placeholder="juan@email.com">
                                 </div>
@@ -684,9 +688,10 @@
                                     Responde estas preguntas para saber si calificas para el bono:
                                 </p>
 
-                                <div class="form-group eligibility-question">
+                                <div class="eligibility-question">
                                     <label>
-                                        1. ¿Tus ingresos familiares declarados en SUNAT son menores de S/. 3,715 soles? *
+                                        1. ¿Tus ingresos familiares declarados en SUNAT son menores de S/. 3,715 soles?
+                                        *
                                     </label>
                                     <div class="radio-group">
                                         <label>
@@ -699,14 +704,15 @@
                                         </label>
                                         <label>
                                             <input type="radio" name="pregunta1" value="no_seguro">
-                                            <span>No estoy seguro(a)</span>
+                                            <span>Tal vez</span>
                                         </label>
                                     </div>
                                 </div>
 
-                                <div class="form-group eligibility-question">
+                                <div class="eligibility-question">
                                     <label>
-                                        2. ¿Tienes una carga familiar, llámase: Esposa o conviviente formal, hijos menores de 25 años, padres, hermanos menores de 25 años? *
+                                        2. ¿Tienes una carga familiar, llámase: Esposa o conviviente formal, hijos
+                                        menores de 25 años, padres, hermanos menores de 25 años? *
                                     </label>
                                     <div class="radio-group">
                                         <label>
@@ -719,12 +725,12 @@
                                         </label>
                                         <label>
                                             <input type="radio" name="pregunta2" value="no_seguro">
-                                            <span>No estoy seguro(a)</span>
+                                            <span>Tal vez</span>
                                         </label>
                                     </div>
                                 </div>
 
-                                <div class="form-group eligibility-question">
+                                <div class="eligibility-question">
                                     <label>
                                         3. ¿Tienes propiedades a tu nombre inscritas en REGISTROS PÚBLICOS? *
                                     </label>
@@ -739,14 +745,15 @@
                                         </label>
                                         <label>
                                             <input type="radio" name="pregunta3" value="no_seguro">
-                                            <span>No estoy seguro(a)</span>
+                                            <span>Tal vez</span>
                                         </label>
                                     </div>
                                 </div>
 
-                                <div class="form-group eligibility-question">
+                                <div class="eligibility-question">
                                     <label>
-                                        4. ¿Has recibido en el pasado algún bono del estado para vivienda como BANCO DE MATERIALES, FONAVI, u otro similar? *
+                                        4. ¿Has recibido en el pasado algún bono del estado para vivienda como BANCO DE
+                                        MATERIALES, FONAVI, u otro similar? *
                                     </label>
                                     <div class="radio-group">
                                         <label>
@@ -759,19 +766,19 @@
                                         </label>
                                         <label>
                                             <input type="radio" name="pregunta4" value="no_seguro">
-                                            <span>No estoy seguro(a)</span>
+                                            <span>Tal vez</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="landing-form-group">
                                 <label for="mensaje">Mensaje adicional</label>
                                 <textarea id="mensaje" name="mensaje" rows="4"
                                     placeholder="Cuéntanos sobre tu situación actual, dudas específicas, o cualquier información adicional que consideres importante..."></textarea>
                             </div>
 
-                            <div class="form-checkbox">
+                            <div class="landing-form-checkbox">
                                 <input type="checkbox" id="terminos" name="terminos" required>
                                 <label for="terminos">
                                     Acepto que Casa Bonita Residencial me contacte para brindarme información sobre sus
@@ -835,7 +842,7 @@
     <!-- Cargar Swiper como defer para que no bloquee el parsing y mantener inicialización en DOMContentLoaded -->
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/script.js" defer></script>
-    
+
 </body>
 
 </html>
