@@ -42,6 +42,7 @@
     </noscript>
 
     <link rel="stylesheet" href="assets/css/style_index.css">
+    <link rel="stylesheet" href="assets/css/style_landing_page.css">
     <link rel="stylesheet" href="assets/css/style_header_footer.css">
 </head>
 
@@ -59,7 +60,7 @@
                     </a>
                 </div>
 
-                
+
                 <!-- Desktop Navigation -->
                 <nav class="desktop-nav">
                     <button onclick="scrollToSection('inicio')">Inicio</button>
@@ -622,6 +623,167 @@
                 <!-- Indicadores -->
                 <div class="carousel-indicators" id="carouselIndicators">
                     <!-- Se generan dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Contacto Section -->
+    <section id="contacto" class="contacto-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>¡Contáctanos Ahora!</h2>
+                <p>Completa el formulario y nuestros asesores especializados te contactarán en menos de 24 horas para
+                    evaluar tu caso sin compromiso.</p>
+            </div>
+
+            <div class="contacto-content">
+
+                <!-- Formulario -->
+                <div class="contact-form-container">
+                    <div class="form-card">
+                        <div class="form-header">
+                            <h3>Formulario de contacto</h3>
+                            <p>Llena todos los campos para una evaluación más precisa</p>
+                        </div>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre completo *</label>
+                                    <input type="text" id="nombre" name="nombre" required
+                                        placeholder="Ej: Juan Pérez García">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dni">DNI</label>
+                                    <input type="text" id="dni" name="dni" required placeholder="12345678"
+                                        maxlength="8">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="telefono">Teléfono *</label>
+                                    <input type="tel" id="telefono" name="telefono" required placeholder="946 552 086">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Correo electrónico</label>
+                                    <input type="email" id="email" name="email" placeholder="juan@email.com">
+                                </div>
+                            </div>
+
+                            <!-- Preguntas de elegibilidad para el bono -->
+                            <div class="eligibility-section">
+                                <h4>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="8" r="6" />
+                                        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                                    </svg>
+                                    Evaluación de elegibilidad para el Bono Familiar Habitacional
+                                </h4>
+                                <p>
+                                    Responde estas preguntas para saber si calificas para el bono:
+                                </p>
+
+                                <div class="form-group eligibility-question">
+                                    <label>
+                                        1. ¿Tus ingresos familiares declarados en SUNAT son menores de S/. 3,715 soles? *
+                                    </label>
+                                    <div class="radio-group">
+                                        <label>
+                                            <input type="radio" name="pregunta1" value="si" required>
+                                            <span>Sí</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="pregunta1" value="no">
+                                            <span>No</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="pregunta1" value="no_seguro">
+                                            <span>No estoy seguro(a)</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group eligibility-question">
+                                    <label>
+                                        2. ¿Tienes una carga familiar, llámase: Esposa o conviviente formal, hijos menores de 25 años, padres, hermanos menores de 25 años? *
+                                    </label>
+                                    <div class="radio-group">
+                                        <label>
+                                            <input type="radio" name="pregunta2" value="si" required>
+                                            <span>Sí</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="pregunta2" value="no">
+                                            <span>No</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="pregunta2" value="no_seguro">
+                                            <span>No estoy seguro(a)</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group eligibility-question">
+                                    <label>
+                                        3. ¿Tienes propiedades a tu nombre inscritas en REGISTROS PÚBLICOS? *
+                                    </label>
+                                    <div class="radio-group">
+                                        <label>
+                                            <input type="radio" name="pregunta3" value="si" required>
+                                            <span>Sí</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="pregunta3" value="no">
+                                            <span>No</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="pregunta3" value="no_seguro">
+                                            <span>No estoy seguro(a)</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group eligibility-question">
+                                    <label>
+                                        4. ¿Has recibido en el pasado algún bono del estado para vivienda como BANCO DE MATERIALES, FONAVI, u otro similar? *
+                                    </label>
+                                    <div class="radio-group">
+                                        <label>
+                                            <input type="radio" name="pregunta4" value="si" required>
+                                            <span>Sí</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="pregunta4" value="no">
+                                            <span>No</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="pregunta4" value="no_seguro">
+                                            <span>No estoy seguro(a)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje adicional</label>
+                                <textarea id="mensaje" name="mensaje" rows="4"
+                                    placeholder="Cuéntanos sobre tu situación actual, dudas específicas, o cualquier información adicional que consideres importante..."></textarea>
+                            </div>
+
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="terminos" name="terminos" required>
+                                <label for="terminos">
+                                    Acepto que Casa Bonita Residencial me contacte para brindarme información sobre sus
+                                    servicios y el programa Techo Propio *
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-hero full-width">
+                                🏠 Solicitar asesoría gratuita
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

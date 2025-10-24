@@ -39,6 +39,32 @@ function handleFormSubmit(event) {
         return;
     }
 
+    // Verificar que se hayan respondido las preguntas de eligibilidad
+    const eligibilityAnswered = ['pregunta1', 'pregunta2', 'pregunta3', 'pregunta4'].every(
+        pregunta => data[pregunta]
+    );
+    
+    if (!eligibilityAnswered) {
+        showToast('Error: Por favor responde todas las preguntas de elegibilidad', 'error');
+        return;
+    }
+
+    // Función helper para formatear respuestas
+    const formatearRespuesta = (respuesta) => {
+        if (respuesta === 'si') return 'Sí';
+        if (respuesta === 'no') return 'No';
+        if (respuesta === 'no_seguro') return 'No estoy seguro(a)';
+        return respuesta;
+    };
+
+    // Obtener las respuestas de elegibilidad
+    const eligibilidadTexto = `
+🏆 Evaluación de elegibilidad para el bono:
+1. Ingresos menores a S/. 3,715: ${formatearRespuesta(data.pregunta1)}
+2. Tiene carga familiar: ${formatearRespuesta(data.pregunta2)}
+3. Propiedades a su nombre: ${formatearRespuesta(data.pregunta3)}
+4. Ha recibido bonos previos: ${formatearRespuesta(data.pregunta4)}`;
+
     // Construir mensaje para WhatsApp
     const mensaje = `Hola, soy ${data.nombre}. Estoy interesado en Casa Bonita Residencial.
 
@@ -46,6 +72,7 @@ function handleFormSubmit(event) {
 - DNI: ${data.dni}
 - Teléfono: ${data.telefono}
 - Email: ${data.email || 'No proporcionado'}
+${eligibilidadTexto}
 - Mensaje: ${data.mensaje || 'Sin mensaje adicional'}
 
 ¿Podrían brindarme más información?`;
