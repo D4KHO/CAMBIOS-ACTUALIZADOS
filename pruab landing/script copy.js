@@ -11,6 +11,107 @@ function scrollToSection(sectionId) {
     }
 }
 
+// ====================================
+// OPTIMIZACIÓN: LAZY LOADING DEL VIDEO HERO
+// ====================================
+function initHeroVideoLazyLoad() {
+    const videoWrapper = document.getElementById('hero-video-wrapper');
+    
+    if (!videoWrapper) return;
+
+    let videoLoaded = false;
+    let userInteracted = false;
+
+    // Función para cargar el video
+    const loadVideo = () => {
+        if (videoLoaded) return;
+        
+        videoLoaded = true;
+        videoWrapper.classList.add('loading');
+
+        const videoSrc = videoWrapper.dataset.videoSrc;
+        
+        // Crear elemento video
+        const video = document.createElement('video');
+        video.id = 'hero-video';
+        video.width = 1920;
+        video.height = 1080;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.style.pointerEvents = 'none';
+        
+        // Prevenir controles y menú contextual
+        video.addEventListener('contextmenu', e => e.preventDefault());
+        video.addEventListener('click', e => e.preventDefault());
+
+        // Crear source
+        const source = document.createElement('source');
+        source.src = videoSrc;
+        source.type = 'video/mp4';
+        
+        video.appendChild(source);
+
+        // Cuando el video esté listo para reproducir
+        video.addEventListener('loadeddata', () => {
+            videoWrapper.classList.remove('loading');
+            video.play().catch(err => {
+                console.log('Autoplay blocked:', err);
+                // Si el autoplay falla, mantener el poster
+            });
+        });
+
+        // Agregar video al contenedor
+        videoWrapper.appendChild(video);
+    };
+
+    // Estrategia 1: Cargar después de interacción del usuario
+    const userInteractionEvents = ['click', 'touchstart', 'keydown', 'mousemove'];
+    
+    const handleUserInteraction = () => {
+        if (!userInteracted) {
+            userInteracted = true;
+            // Esperar 500ms después de la primera interacción
+            setTimeout(() => {
+                loadVideo();
+            }, 500);
+            
+            // Remover listeners después de la primera interacción
+            userInteractionEvents.forEach(event => {
+                document.removeEventListener(event, handleUserInteraction);
+            });
+        }
+    };
+
+    userInteractionEvents.forEach(event => {
+        document.addEventListener(event, handleUserInteraction, { once: true, passive: true });
+    });
+
+    // Estrategia 2: Cargar después de 3 segundos si no hay interacción
+    const fallbackTimer = setTimeout(() => {
+        if (!videoLoaded) {
+            loadVideo();
+        }
+    }, 3000);
+
+    // Estrategia 3: Cargar cuando se hace scroll (opcional)
+    let scrollTriggered = false;
+    const handleScroll = () => {
+        if (!scrollTriggered && window.scrollY > 50) {
+            scrollTriggered = true;
+            loadVideo();
+            window.removeEventListener('scroll', handleScroll);
+        }
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Limpiar timer si el video se carga antes
+    if (videoLoaded) {
+        clearTimeout(fallbackTimer);
+    }
+}
+
 
 function openWhatsApp() {
     const mensaje = 'Hola, quiero información sobre Casa Bonita Residencial';
@@ -395,16 +496,13 @@ function trackEvent(eventName, parameters = {}) {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Solución simple para el video en iOS
-    const heroVideo = document.getElementById('hero-video');
-    if (heroVideo) {
-        // Prevenir toques en el video en móviles
-        heroVideo.style.pointerEvents = 'none';
+    // ====================================
+    // LAZY LOADING OPTIMIZADO DEL VIDEO HERO
+    // ====================================
+    initHeroVideoLazyLoad();
 
-        // Prevenir el menú contextual y controles
-        heroVideo.addEventListener('contextmenu', e => e.preventDefault());
-        heroVideo.addEventListener('click', e => e.preventDefault());
-    }
+    // Solución simple para el video en iOS - Ya no necesaria con lazy load
+    // pero mantenemos la lógica por si el video se carga
 
     // Initialize animations and effects
     animateOnScroll();
@@ -450,7 +548,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <button class="mobile-close" aria-label="Cerrar menú" style="align-self:flex-end;background:none;border:none;font-size:1.6rem;">&times;</button>
             <nav class="desktop-nav" role="navigation"></nav>
             <div class="mobile-logo-container">
-                <img src="assets/img/LOGO WEBP NEGRO.webp" alt="Casa Bonita Logo" class="mobile-logo">
+                <img src="../assets/img/LOGO WEBP NEGRO.webp" alt="Casa Bonita Logo" class="mobile-logo">
             </div>
         </div>
     `;

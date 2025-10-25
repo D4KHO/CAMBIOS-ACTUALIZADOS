@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Preload critical resources -->
+    <!-- Preload critical resources with font-display: swap -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
         as="style" onload="this.onload=null;this.rel='stylesheet'">
 
@@ -30,8 +30,11 @@
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
     </noscript>
-    <!-- Preload poster image for hero (LCP) -->
+    <!-- Preload poster image for hero (LCP) - CRÍTICO PARA RENDIMIENTO -->
     <link rel="preload" as="image" href="../assets/img/hero_c.webp" fetchpriority="high">
+    
+    <!-- NO precargar el video - se cargará bajo demanda -->
+    <!-- Esto ahorra 5-10MB de ancho de banda inicial -->
 
     <!-- Swiper CSS cargado de forma diferida -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style"
@@ -81,10 +84,12 @@
     <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero-background">
-            <video id="hero-video" width="1920" height="1080" preload="metadata" autoplay loop muted playsinline
-                poster="../assets/img/hero_c.webp">
-                <source src="../assets/img/video_hero_optimizado.mp4" type="video/mp4">
-            </video>
+            <!-- Video con lazy loading optimizado -->
+            <div id="hero-video-wrapper" class="hero-video-container" 
+                 data-video-src="../assets/img/video_hero_optimizado.mp4"
+                 style="background-image: url('../assets/img/hero_c.webp'); background-size: cover; background-position: center;">
+                <!-- Video se cargará dinámicamente cuando sea necesario -->
+            </div>
             <div class="hero-overlay"></div>
         </div>
         <div class="container">
