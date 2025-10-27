@@ -1118,12 +1118,6 @@ section {
     }
 }
 
-.section-header {
-    max-width: 48rem;
-    margin: 0 auto 4rem;
-    text-align: center
-}
-
 .section-header p {
     font-size: 1.125rem;
     color: var(--gray-dark);
@@ -1144,7 +1138,7 @@ section {
 
 .project-section {
     padding: 8rem 0 5rem;
-    background: linear-gradient(135deg, var(--mint-fresh-light) 0, var(--sage-green-light) 50%, var(--white) 100%);
+    background: linear-gradient(135deg, hsl(155deg 30% 94% / 70%) 0, var(--sage-green-light) 50%, var(--white) 100%);
     position: relative;
     overflow: hidden
 }
@@ -1770,13 +1764,13 @@ model-viewer {
 
 @media (max-width:767px) {
     .project-section {
-        padding: 5rem 0 3rem
+        padding: 0;
     }
 
     .project-title {
         font-size: 2.2rem;
-        margin-top: 5rem
-    }
+        margin-top: 2rem
+    }   
 
     .project-subtitle {
         font-size: 1.1rem
@@ -2171,6 +2165,7 @@ model-viewer {
     
     .section-header h2 {
         font-size: 2rem;
+        margin-top: 8rem;
     }
 
     .features-header h3{
@@ -3173,7 +3168,7 @@ model-viewer {
     
     /* Reducir aún más el espaciado */
     .testimonios-section {
-        padding: 2rem 0 1.5rem;
+        padding: 2rem 0 0.5rem;
     }
     
     /* Ajustar el contenedor principal en móviles */

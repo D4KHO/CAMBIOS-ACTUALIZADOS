@@ -185,7 +185,23 @@
     .eligibility-question label {
         font-size: 0.95em;
     }
+
+    .project-showcase {
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+    }
+
 }
+
+
+@media (max-width: 767px) {
+    .landing-contacto-section h2 {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+}
+
 
 /* ================================
    ESTILOS HOVER PARA BOTONES
@@ -204,7 +220,7 @@
    ================================ */
 
 .landing-contacto-section {
-    padding: 3rem 0;
+    padding: 0 0 3rem 0;
     background: var(--white)
 }
 

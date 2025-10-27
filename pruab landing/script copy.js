@@ -496,13 +496,16 @@ function trackEvent(eventName, parameters = {}) {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    // ====================================
-    // LAZY LOADING OPTIMIZADO DEL VIDEO HERO
-    // ====================================
-    initHeroVideoLazyLoad();
+    // Solución simple para el video en iOS
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo) {
+        // Prevenir toques en el video en móviles
+        heroVideo.style.pointerEvents = 'none';
 
-    // Solución simple para el video en iOS - Ya no necesaria con lazy load
-    // pero mantenemos la lógica por si el video se carga
+        // Prevenir el menú contextual y controles
+        heroVideo.addEventListener('contextmenu', e => e.preventDefault());
+        heroVideo.addEventListener('click', e => e.preventDefault());
+    }
 
     // Initialize animations and effects
     animateOnScroll();
