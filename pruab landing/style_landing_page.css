@@ -85,16 +85,17 @@
 }
 
 .eligibility-section {
-    background: #f8f9fa;
+    background: #2a2a2a;
     padding: 1px 20px 20px;
     border-radius: 8px;
+    border: 1px solid #404040;
 }
 
 .eligibility-section h4 {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
-    color: #2c3e50;
+    color: #ffffff;
     font-size: 1.1em;
 }
 
@@ -103,10 +104,11 @@
     height: 20px;
     vertical-align: middle;
     margin-right: 8px;
+    stroke: #ffffff;
 }
 
 .eligibility-section > p {
-    color: #666;
+    color: #d1d1d1;
     font-size: 0.9em;
     margin-bottom: 20px;
 }
@@ -120,7 +122,7 @@
     margin-bottom: 10px;
     line-height: 1.5;
     font-weight: 500;
-    color: #2c3e50;
+    color: #e0e0e0;
 }
 
 .radio-group {
@@ -136,6 +138,7 @@
     cursor: pointer;
     font-weight: normal;
     transition: all 0.2s ease;
+    color: #d1d1d1;
 }
 
 .radio-group label:hover {
@@ -155,6 +158,8 @@
     padding: 15px;
     border-radius: 6px;
     animation: fadeIn 0.3s ease-in;
+    background: #2a2a2a;
+    color: #ffffff;
 }
 
 @keyframes fadeIn {
@@ -172,6 +177,8 @@
 @media (max-width: 768px) {
     .eligibility-section {
         padding: 15px;
+        margin-bottom: 20px;
+
     }
     
     .eligibility-section h4 {
@@ -231,31 +238,32 @@
 }
 
 .landing-form-card {
-    background: var(--white);
+    background: #1a1a1a;
     border-radius: .5rem;
-    box-shadow: var(--shadow-strong);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
     overflow: hidden
 }
 
 .landing-form-header {
     padding: 1.5rem;
-    border-bottom: 1px solid var(--gray-medium)
+    border-bottom: 1px solid #333
 }
 
 .landing-form-header h3 {
     font-size: 1.5rem;
-    color: #333;
+    color: #ffffff;
     margin-bottom: .5rem
 }
 
 .landing-form-header p {
-    color: var(--gray-dark);
-    opacity: .8;
+    color: #d1d1d1;
+    opacity: .9;
     margin: 0
 }
 
 .landing-contact-form {
-    padding: 1.5rem
+    padding: 1.5rem;
+    background: #1a1a1a;
 }
 
 .landing-form-row {
@@ -272,7 +280,7 @@
 
 .landing-form-group label {
     font-weight: 500;
-    color: var(--gray-dark);
+    color: #e0e0e0;
     margin-bottom: .5rem
 }
 
@@ -280,36 +288,47 @@
 .landing-form-group select,
 .landing-form-group textarea {
     padding: .75rem;
-    border: 1px solid var(--gray-medium);
+    border: 1px solid #404040;
     border-radius: .375rem;
     font-size: 1rem;
     transition: var(--transition-smooth);
     resize: none;
+    background: #2a2a2a;
+    color: #ffffff;
+}
+
+.landing-form-group input::placeholder,
+.landing-form-group select::placeholder,
+.landing-form-group textarea::placeholder {
+    color: #808080;
 }
 
 .landing-form-group input:focus,
 .landing-form-group select:focus,
 .landing-form-group textarea:focus {
     outline: 0;
-    border-color: var(--forest-green);
-    box-shadow: 0 0 0 3px hsl(152, 85%, 20%, .1)
+    border-color: var(--forest-green-light);
+    box-shadow: 0 0 0 3px hsl(145, 65%, 45%, .2);
+    background: #333;
 }
 
 .landing-form-checkbox {
     display: flex;
     align-items: flex-start;
     gap: .5rem;
-    margin-bottom: 1.5rem
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
 }
 
 .landing-form-checkbox input[type=checkbox] {
-    margin-top: .25rem
+    margin-top: .25rem;
+    accent-color: var(--forest-green-light);
 }
 
 .landing-form-checkbox label {
     font-size: .875rem;
-    color: var(--gray-dark);
-    opacity: .8;
+    color: #d1d1d1;
+    opacity: .9;
     line-height: 1.4
 }
 
