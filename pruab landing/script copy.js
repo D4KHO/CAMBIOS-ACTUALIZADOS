@@ -154,7 +154,6 @@ function handleFormSubmit(event) {
     const formatearRespuesta = (respuesta) => {
         if (respuesta === 'si') return 'Sí';
         if (respuesta === 'no') return 'No';
-        if (respuesta === 'no_seguro') return 'Tal vez';
         return respuesta;
     };
 
@@ -1149,6 +1148,9 @@ function optimizeLazyImages() {
 
 // Inicializar modelo 3D cuando el DOM esté listo y manejar cambios de tamaño
 document.addEventListener('DOMContentLoaded', function () {
+    // Inicializar lazy loading del video hero
+    initHeroVideoLazyLoad();
+    
     // Inicializar lazy loading para backgrounds
     initLazyBackgrounds();
 

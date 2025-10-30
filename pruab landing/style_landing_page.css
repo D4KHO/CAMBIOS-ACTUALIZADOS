@@ -307,8 +307,8 @@
 .landing-form-group select:focus,
 .landing-form-group textarea:focus {
     outline: 0;
-    border-color: var(--forest-green-light);
-    box-shadow: 0 0 0 3px hsl(145, 65%, 45%, .2);
+    border-color: #e47835;
+    box-shadow: 0 0 0 3px hsla(32, 65%, 45%, 0.2);
     background: #333;
 }
 
@@ -322,7 +322,7 @@
 
 .landing-form-checkbox input[type=checkbox] {
     margin-top: .25rem;
-    accent-color: var(--forest-green-light);
+    accent-color: #e47835;
 }
 
 .landing-form-checkbox label {
