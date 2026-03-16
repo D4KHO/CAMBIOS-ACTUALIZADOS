@@ -35,7 +35,7 @@
 
     <!-- Swiper CSS cargado de forma diferida -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style"
-            onload="this.onload=null;this.rel='stylesheet'">
+        onload="this.onload=null;this.rel='stylesheet'">
 
     <noscript>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -44,6 +44,16 @@
     <link rel="stylesheet" href="assets/css/style_index.css">
     <link rel="stylesheet" href="assets/css/style_header_footer.css">
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T0JDPBFVPJ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-T0JDPBFVPJ');
+</script>
 
 <body>
     <!-- Main header -->
@@ -76,12 +86,13 @@
                 <!-- Desktop Navigation -->
                 <nav class="desktop-nav">
                     <button onclick="scrollToSection('inicio')">Inicio</button>
-                    <button onclick="scrollToSection('proyecto')">Proyecto</button>
-                    <button onclick="scrollToSection('techo-propio')">Techo Propio</button>
                     <a href="contacto.html" class="nav-link">Contacto</a>
                     <a href="informacion.html" class="nav-link">Informacion</a>
                     <a href="nosotros.html" class="nav-link">Nosotros</a>
-                    <a href="pruab landing/landing_page.html" class="nav-link">landing prueba</a>
+                    <a href="documentos.html" class="nav-link">Documentos</a>
+                    <a href="mapa.html" class="nav-link">Mapa Proyecto</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="club cbr.html" class="nav-link">Club</a>
                 </nav>
 
                 <!-- CTA Button -->
@@ -288,7 +299,7 @@
                         <h4>Facilidades de pago únicas</h4>
                         <p>En Casa Bonita Residencial sabemos lo importante que es cumplir el sueño de tener tu primera
                             vivienda. Por eso, te ofrecemos la oportunidad de adquirir tu casa en Piura con cuotas desde
-                            S/340 al mes, sin inicial y sin intereses.
+                            S/390 al mes, sin inicial y sin intereses.
 
                         </p>
                         <div class="feature-details">
@@ -298,7 +309,7 @@
                             </div>
                             <div class="detail-item">
                                 <span class="detail-icon">📆</span>
-                                <span>Cuotas fijas desde S/340 al mes</span>
+                                <span>Cuotas fijas desde S/390 al mes</span>
                             </div>
                             <div class="detail-item">
                                 <span class="detail-icon">🏡</span>
@@ -377,39 +388,40 @@
                         <div class="feature-header">
                             <div class="feature-icon-enhanced" style="background: #8b5cf6">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                                 </svg>
                             </div>
-                            <div class="feature-badge">Educación</div>
+                                <div class="feature-badge">SEGURIDAD</div>
                         </div>
-                        <h4>La mejor educación cerca de tu hogar</h4>
-                        <p>Dale a tus hijos un futuro brillante con acceso a colegios, institutos y universidades de
-                            prestigio a solo minutos de tu casa. En Casa Bonita Residencial, la educación de calidad
-                            está siempre al alcance de tu familia.</p>
+                        <h4>Tu tranquilidad también tiene una dirección</h4>
+                        <p>En Casa Bonita Residencial, la seguridad y el bienestar de tu familia son prioridad.
+                            Disfruta de un entorno vigilado, ordenado y comprometido con el desarrollo personal de su
+                            comunidad gracias a iniciativas como Vanki, la plataforma que impulsa el aprendizaje de
+                            inglés y finanzas.</p>
                         <div class="feature-details">
                             <div class="detail-item">
-                                <span class="detail-icon">📚</span>
-                                <span>Colegios de prestigio en la zona</span>
+                                <span class="detail-icon">👮‍♂️</span>
+                                <span>Vigilancia y seguridad las 24 horas</span>
                             </div>
                             <div class="detail-item">
-                                <span class="detail-icon">🎓</span>
-                                <span>Universidades e institutos cercanos</span>
+                                <span class="detail-icon">🏡</span>
+                                <span>Ambiente familiar y tranquilo</span>
                             </div>
                             <div class="detail-item">
-                                <span class="detail-icon">🚌 </span>
-                                <span>Fácil acceso al transporte escolar</span>
+                                <span class="detail-icon">🌿</span>
+                                <span>Entorno limpio y ordenado</span>
                             </div>
                             <div class="detail-item" style="display:flex;align-items:center;gap:0.6rem;">
                                 <span class="detail-icon">
                                     <img src="assets/img/vanki_icon.png" alt="Vanki"
-                                        style="width:69px;height:29px;border-radius:4px;display:block;">
+                                        style="width:46px;height:29px;border-radius:4px;display:block;">
                                 </span>
                                 <a class="vanki-link" href="https://vanki.org/" target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Acceso a Vanki — aprende inglés y educación financiera"
                                     style="display:flex;align-items:center;gap:0.5rem;color:inherit;text-decoration:none;">
-                                    <span>Acceso a Vanki — una plataforma para aprender inglés y educación
+                                    <span>Acceso a Vanki — inglés y educación financiera
                                         financiera</span>
                                 </a>
                             </div>
@@ -421,62 +433,65 @@
             <!-- Sección principal con imagen y contenido -->
             <div class="project-showcase">
                 <div class="showcase-content">
-                        <div class="showcase-text">
-                            <h3>Tu propio espacio, con la ubicación que te conecta con lo mejor de Piura.</h3>
-                            <p>Casa Bonita Residencial combina la tranquilidad de vivir en un entorno natural con la
-                                comodidad de estar dentro del casco urbano de Piura. Nuestros lotes + módulos están
-                                estratégicamente ubicados para ofrecerte lo mejor de ambos mundos.</p>
+                    <div class="showcase-text">
+                        <h3>Tu propio espacio, con la ubicación que te conecta con lo mejor de Piura.</h3>
+                        <p>Casa Bonita Residencial combina la tranquilidad de vivir en un entorno natural con la
+                            comodidad de estar dentro del casco urbano de Piura. Nuestros lotes + módulos están
+                            estratégicamente ubicados para ofrecerte lo mejor de ambos mundos.</p>
 
-                            <div class="highlight-stats">
-                                <div class="highlight-stat">
-                                    <div class="stat-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                                            <circle cx="9" cy="7" r="4" />
-                                            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                                        </svg>
-                                    </div>
-                                    <div class="stat-content">
-                                        <span class="stat-number">500+</span>
-                                        <span class="stat-label">Familias felices</span>
-                                    </div>
+                        <div class="highlight-stats">
+                            <div class="highlight-stat">
+                                <div class="stat-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                        <circle cx="9" cy="7" r="4" />
+                                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                    </svg>
                                 </div>
-                                <div class="highlight-stat">
-                                    <div class="stat-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <polyline points="12,6 12,12 16,14" />
-                                        </svg>
-                                    </div>
-                                    <div class="stat-content">
-                                        <span class="stat-number">S/340</span>
-                                        <span class="stat-label">Cuotas desde</span>
-                                    </div>
+                                <div class="stat-content">
+                                    <span class="stat-number">800+</span>
+                                    <span class="stat-label">Familias felices</span>
                                 </div>
-                                <div class="highlight-stat">
-                                    <div class="stat-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                                            <polyline points="22,4 12,14.01 9,11.01" />
-                                        </svg>
-                                    </div>
-                                    <div class="stat-content">
-                                        <span class="stat-number">100%</span>
-                                        <span class="stat-label">servicios básicos</span>
-                                    </div>
+                            </div>
+                            <div class="highlight-stat">
+                                <div class="stat-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12,6 12,12 16,14" />
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-number">S/390</span>
+                                    <span class="stat-label">Cuotas desde</span>
+                                </div>
+                            </div>
+                            <div class="highlight-stat">
+                                <div class="stat-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22,4 12,14.01 9,11.01" />
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-number">100%</span>
+                                    <span class="stat-label">servicios básicos</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Mapa colocado debajo del texto (full-width) -->
-                    <div class="showcase-image">
-                        <div class="map-container" style="position: relative; width: 100%; height: 100%;">
-                            <!-- Mapa embebido de Google Maps en lugar del modelo 3D -->
-                           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100915.1017937254!2d-80.64956549987922!3d-5.218067272672257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f12.2!3m3!1m2!1s0x904a1700267ea87f%3A0xffcbd3eaa841dc8f!2sCasa%20Bonita%20Residencial!5e0!3m2!1ses-419!2spe!4v1758550220730!5m2!1ses-419!2spe" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
+                <!-- Mapa colocado debajo del texto (full-width) -->
+                <div class="showcase-image">
+                    <div class="map-container" style="position: relative; width: 100%; height: 100%;">
+                        <!-- Mapa embebido de Google Maps en lugar del modelo 3D -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100915.1017937254!2d-80.64956549987922!3d-5.218067272672257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f12.2!3m3!1m2!1s0x904a1700267ea87f%3A0xffcbd3eaa841dc8f!2sCasa%20Bonita%20Residencial!5e0!3m2!1ses-419!2spe!4v1758550220730!5m2!1ses-419!2spe"
+                            width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+                </div>
             </div>
 
             <!-- Call to action mejorado -->
@@ -1076,7 +1091,7 @@
                 </div>
                 <h4>Facebook</h4>
                 <p>@casabonita.residencial</p>
-                <a href="https://www.facebook.com/casabonita.residencial/" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.facebook.com/people/Casa-Bonita-Residencial/100088682082915/" target="_blank" rel="noopener noreferrer"
                     class="icon_contact-link">Seguir</a>
             </div>
             <div class="icon_contact-card">
@@ -1113,94 +1128,98 @@
             <div class="footer-content">
                 <!-- Logo y descripción -->
                 <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="assets/img/LOGO PNG BLANCO.webp" alt="Casa Bonita Logo" class="footer-logo-img"
-                            loading="lazy" width="200" height="80">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="assets/img/LOGO PNG BLANCO.webp" alt="Casa Bonita Logo" class="footer-logo-img"
+                                loading="lazy" width="200" height="80">
+                        </div>
+                        <p class="footer-description footer-brand-description">
+                            Tu hogar soñado en Piura te espera. Únete a las más de 800 familias que ya eligieron Casa Bonita
+                            Residencial como la mejor opción para su futuro.
+                        </p>
                     </div>
-                    <p class="footer-description">
-                        Tu hogar soñado en Piura te espera. Únete a las más de 300 familias que ya eligieron Casa Bonita
-                        Residencial como la mejor opción para su futuro.
-                    </p>
                     <!-- social links removed -->
                 </div>
 
-                <!-- Enlaces rápidos -->
-                <div class="footer-section">
-                    <h4>Enlaces rápidos</h4>
-                    <ul class="footer-links">
-                        <li><button onclick="scrollToSection('inicio')">Inicio</button></li>
-                        <li><button onclick="scrollToSection('proyecto')">Sobre el proyecto</button></li>
-                        <li><button onclick="scrollToSection('modelos')">Modelos de vivienda</button></li>
-                        <li><button onclick="scrollToSection('techo-propio')">Programa Techo Propio</button></li>
-                        <li><button onclick="scrollToSection('proceso')">Proceso de compra</button></li>
-                    </ul>
-                </div>
+                <div class="footer-two-column">
+                    <!-- Enlaces rápidos -->
+                    <div class="footer-section">
+                        <h4>Enlaces rápidos</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="informacion.html">¿Quiénes somos?</a></li>
+                            <li><a href="index.html#proyecto">Sobre el proyecto</a></li>
+                            <li><a href="index.html#modelos">Modelos de vivienda</a></li>
+                            <li><a href="index.html#techo-propio">Programa Techo Propio</a></li>
+                            <li><a href="index.html#proceso">Proceso de compra</a></li>
+                            <li><a href="informacion.html#libro-reclamaciones">Libro de Reclamaciones</a></li>
+                            <li><a href="informacion.html#preguntas-frecuentes">Preguntas frecuentes</a></li>
+                            <li><a href="club cbr.html">Club CBR</a></li>
+                        </ul>
+                    </div>
 
-                <!-- Información -->
-                <div class="footer-section">
-                    <h4>Información</h4>
-                    <ul class="footer-links">
-                        <li><a href="informacion.html#libro-reclamaciones">Libro de Reclamaciones</a></li>
-                        <li><a href="informacion.html#preguntas-frecuentes">Preguntas frecuentes</a></li>
-                        <li><a href="informacion.html#terminos">Términos y condiciones</a></li>
-                        <li><a href="informacion.html#privacidad">Política de privacidad</a></li>
-                        <li><a href="informacion.html">¿Quiénes somos?</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contacto -->
-                <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <div class="footer-contact">
-                        <div class="footer-contact-item">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path
-                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                            </svg>
-                            <span><a href="https://wa.me/51946552086" target="_blank" rel="noopener noreferrer"
-                                    style="color:inherit;text-decoration:none;">+51 946 552 086</a></span>
-                        </div>
-                        <div class="footer-contact-item">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>
-                            <span><a href="https://maps.app.goo.gl/6cWEoPFX8cWQvAre9" target="_blank"
-                                    rel="noopener noreferrer" style="color:inherit;text-decoration:none;">AAHH La
-                                    Primavera MZ B 1Lote26. CASTILLA</a></span>
-                        </div>
-                        <div class="footer-contact-item">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>
-                            <span><a href="https://maps.app.goo.gl/deNwYLTT2i6a2jfB7" target="_blank"
-                                    rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Calle San
-                                    Cristóbal 217 - Sta. Isabel. Piura</a></span>
-                        </div>
-                        <div class="footer-contact-item">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10" />
-                                <polyline points="12,6 12,12 16,14" />
-                            </svg>
-                            <span>Lun - Sab: 9:00 - 18:00</span>
-                        </div>
-                        <div class="footer-contact-item">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                <polyline points="22,6 12,13 2,6" />
-                            </svg>
-                            <span>asignaciones@casabonita.pe</span>
-                        </div>
-                        <div class="footer-whatsapp-button">
-                            <button class="btn btn-whatsapp-footer" onclick="openWhatsApp()">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <!-- Información -->
+                    <div class="footer-section">
+                        <h4>¿Quieres comprar tu casa propia y tienes preguntas?</h4>
+                        <p class="footer-description">Si quieres saber mas sobre el proyecto, requisitos, precios, financiamiento u otras consultas antes de comprar estaremos encantados de ayudarte  </p>
+                        <div class="footer-contact">
+                            <div class="footer-contact-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path
-                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106">
-                                    </path>
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                                 </svg>
-                                <span>Escríbenos por WhatsApp</span>
-                            </button>
+                                <span><a href="https://wa.me/51946552086" target="_blank" rel="noopener noreferrer"
+                                        style="color:inherit;text-decoration:none;">+51 946 552 086</a></span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                <span><a href="https://maps.app.goo.gl/6cWEoPFX8cWQvAre9" target="_blank"
+                                        rel="noopener noreferrer" style="color:inherit;text-decoration:none;">A.H. La
+                                        Primavera, Mz. B, Lt. 26, Castilla, Piura</a></span>
+                            </div>
+                             <div class="footer-contact-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                <span><a href="https://maps.app.goo.gl/deNwYLTT2i6a2jfB7" target="_blank"
+                                        rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Calle San
+                                        Cristóbal 217 - Sta. Isabel. Piura</a></span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                     <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12,6 12,12 16,14" />
+                                 </svg>
+                                <span>Lunes - viernes: 9:00 am - 1:00 pm y 2:00 pm - 6:00 pm</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12,6 12,12 16,14" />
+                                </svg>
+                                <span>Sabado: 9:00 am - 12:00 pm</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                                <span>asignaciones@casabonita.pe</span>
+                            </div>
+                            <div class="footer-whatsapp-button">
+                                <button class="btn btn-whatsapp-footer" onclick="openWhatsApp()">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106">
+                                        </path>
+                                    </svg>
+                                    <span>Escríbenos por WhatsApp</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1220,6 +1239,10 @@
                     </div>
                 </div>
             </div>
+            <div class="footer-ai-note">
+                <p>El asistente virtual basado en inteligencia artificial brinda información general y apoyo inicial en consultas. Las respuestas generadas por la IA pueden contener imprecisiones y no constituyen asesoramiento oficial, contractual ni vinculante.
+                Para atención personalizada y aclarar dudas sobre los requisitos del Bono Techo Propio, comuníquese con un asesor en cita presencial o virtual, o visite una de nuestras Salas de Ventas de Casa Bonita Residencial en Piura.</p>
+            </div>
             <div class="footer-disclaimer"
                 style="margin-top: 20px; font-size: 0.8em; color: #999; text-align: center; padding: 0 20px;">
                 Disclaimer: El proyecto "Casa Bonita Residencial" está en desarrollo, bajo los estandares que señala el
@@ -1233,22 +1256,42 @@
         </div>
     </footer>
 
-    <!-- WhatsApp flotante -->
-    <div class="whatsapp-float">
-        <button onclick="openWhatsApp()" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106">
-                </path>
-            </svg>
-        </button>
+    <!-- Aviso / notificación IA + WhatsApp flotante -->
+    <div class="floating-stack">
+        <div class="notice-pill" id="noticePill">
+            <button class="notice-trigger" id="noticeTrigger" aria-expanded="false" aria-controls="noticeCard">
+                <span class="notice-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v9A2.5 2.5 0 0 1 18.5 17H7l-4 4v-3.5Z" />
+                        <circle cx="17.5" cy="7.5" r="1.5" />
+                    </svg>
+                    <span class="notice-badge" aria-label="1 nuevo">1</span>
+                </span>
+            </button>
+            <div class="notice-card" id="noticeCard" role="status">
+                <p><strong>Estamos validando un sistema innovador de soporte con inteligencia artificial para responder sus consultas de manera ágil y oportuna.</strong></p>
+                <p>Si necesita más información, tiene preguntas, requiere asesoría sobre los requisitos o cualquier otra duda sobre el <strong>proyecto de Casa Bonita Residencial en Piura, haga clic en el botón de WhatsApp abajo y consulte directamente con nuestro asistente virtual.</strong></p>
+                <p>En caso de no haber recibido una respuesta, llámenos o escríbanos al <a href="tel:+51946552086">946 552 086</a> (mensaje), o envíenos un correo a <a href="mailto:assistenza@casabonita.pe">assistenza@casabonita.pe</a>, y nos aseguraremos de que reciba una respuesta por parte de nuestro equipo.</p>
+                <button class="notice-close" type="button" aria-label="Cerrar comunicado">×</button>
+            </div>
+        </div>
+
+        <div class="whatsapp-float">
+            <button onclick="openWhatsApp()" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106">
+                    </path>
+                </svg>
+            </button>
+        </div>
     </div>
 
     <!-- Swiper JS -->
     <!-- Cargar Swiper como defer para que no bloquee el parsing y mantener inicialización en DOMContentLoaded -->
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/script.js" defer></script>
-    
+
 </body>
 
 </html>

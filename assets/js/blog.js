@@ -14,8 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentPage = 1;
     let filteredBlogCards = [];
     
-    // URL base de la API
-    const API_BASE_URL = 'https://casabonita.pe/admin_blog';
+    // URL base de la API - Detecta automáticamente el entorno
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const API_BASE_URL = isLocal 
+        ? 'http://localhost:5000'  // Desarrollo local
+        : 'https://api-blog-casabonita.onrender.com';  // Producción - Nuevo repo API
     
     // Filtros activos
     let activeFilters = {
@@ -96,12 +99,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Formatear la fecha
         const formattedDate = formatDate(blog.fecha);
         
-        // Construir la URL de la imagen
-        const imageUrl = blog.imagen ? `${API_BASE_URL}${blog.imagen}` : 'https://via.placeholder.com/400x250?text=Sin+Imagen';
+        // Usar URL de imagen (ya sea de Cloudinary o local)
+        const imageUrl = blog.imagen || 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
 
         article.innerHTML = `
             <div class="blog-image-container">
-                <img src="${imageUrl}" alt="${blog.titulo}" class="blog-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x250?text=Sin+Imagen'">
+                <img src="${imageUrl}" alt="${blog.titulo}" class="blog-image" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
             </div>
             <div class="blog-content">
                 <div class="blog-category">${blog.categoria || 'General'}</div>
@@ -529,11 +532,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 year: 'numeric'
             });
 
-            // Construir URL de imagen (puede ser relativa o absoluta)
-            let imagenUrl = blog.imagen || 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80';
-            if (blog.imagen && blog.imagen.startsWith('/static/uploads/')) {
-                imagenUrl = `${API_BASE_URL}${blog.imagen}`;
-            }
+            // Usar URL de imagen (Cloudinary o placeholder)
+            const imagenUrl = blog.imagen || 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80';
 
             postItem.innerHTML = `
                 <img src="${imagenUrl}" alt="${blog.titulo}" class="post-image" loading="lazy" 

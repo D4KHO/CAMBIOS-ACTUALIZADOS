@@ -210,6 +210,17 @@ html {
     padding: 0;
 }
 
+.main-header_MAP{
+    background: var(--white);
+    box-shadow: var(--shadow-soft);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
 /* Barra de progreso de scroll */
 .scroll-progress {
     position: absolute;
@@ -359,6 +370,12 @@ a:hover {
     padding: 1rem
 }
 
+.footer-two-column {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
 .footer-contact-info {
     display: flex;
     flex-direction: column;
@@ -395,7 +412,7 @@ a:hover {
 
 .footer-links a {
     display: block;
-    padding: .5rem;
+    padding: .3rem;
     border-radius: 4px
 }
 
@@ -452,8 +469,18 @@ a:hover {
     margin-bottom: 1rem
 }
 
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-brand-description {
+    margin-bottom: 0;
+}
+
 .footer-section h4 {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 1rem
 }
@@ -520,6 +547,11 @@ a:hover {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .footer-two-column {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
     .footer-bottom {
         flex-direction: row;
         justify-content: space-between
@@ -529,7 +561,7 @@ a:hover {
 
 @media (min-width:1024px) {
     .footer-content {
-        grid-template-columns: repeat(4, 1fr)
+        grid-template-columns: repeat(1, 1fr)
     }
 }
 
@@ -652,6 +684,11 @@ a:hover {
 
     .footer-content {
         gap: 0rem !important;
+    }
+
+    .footer-brand {
+        align-items: flex-start;
+        flex-direction: column;
     }
 }
 
