@@ -160,6 +160,12 @@ main {
     aspect-ratio: 4 / 4;
 }
 
+.club-ally-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .club-ally-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
