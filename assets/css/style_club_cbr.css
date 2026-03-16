@@ -42,7 +42,6 @@ main {
 
 /* ── 2. CONTACTO ─────────────────────────────── */
 .club-contact-section {
-    background: #f6f6f6;
     padding: 2.5rem 0;
 }
 
@@ -124,7 +123,6 @@ main {
 
 /* ── 4. ALIADOS ESTRATÉGICOS ─────────────────── */
 .club-allies-section {
-    background: #f6f6f6;
     padding: 4rem 0 5rem;
 }
 
@@ -159,7 +157,7 @@ main {
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     transition: transform 0.2s, box-shadow 0.2s;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 4 / 4;
 }
 
 .club-ally-card:hover {
