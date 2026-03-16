@@ -4,8 +4,7 @@ main {
 
 /* ── 1. VIDEO SECTION ─────────────────────────── */
 .club-video-section {
-    background: #0f0f0f;
-    padding: 3rem 0 2rem;
+    padding: 1rem 0 2rem;
 }
 
 .club-video-wrapper {
@@ -19,7 +18,8 @@ main {
     width: 100%;
     display: block;
     object-fit: cover;
-    max-height: 520px;
+    max-height: 411px;
+    object-position: center 38%;
 }
 
 .club-video-overlay {
@@ -154,45 +154,39 @@ main {
 }
 
 .club-ally-card {
-    background: #ffffff;
-    border: 1px solid #e8e8e8;
+    position: relative;
     border-radius: 14px;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     transition: transform 0.2s, box-shadow 0.2s;
+    aspect-ratio: 4 / 5;
 }
 
 .club-ally-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
 }
 
-.club-ally-icon {
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 0.8rem;
-}
-
-.club-ally-icon img {
+.club-ally-card img {
     width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
 
 .club-ally-card h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.15rem;
-    color: #111111;
-}
-
-.club-ally-card p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     margin: 0;
-    color: #555555;
-    font-size: 0.95rem;
-    line-height: 1.65;
+    padding: 1rem 1rem 0.85rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+    text-align: center;
+
 }
 
 .club-brands-block {
