@@ -18,8 +18,8 @@ main {
     width: 100%;
     display: block;
     object-fit: cover;
-    max-height: 411px;
-    object-position: center 38%;
+    max-height: 430px;
+    object-position: center 25%;
 }
 
 .club-video-overlay {
