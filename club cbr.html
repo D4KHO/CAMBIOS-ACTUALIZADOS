@@ -406,6 +406,16 @@
                     }
                 }
             });
+
+            // Navegar a página de detalle al hacer clic en tarjeta de marca
+            document.querySelectorAll('.club-brand-card[data-brand]').forEach(function (card) {
+                card.addEventListener('click', function () {
+                    var brand = this.getAttribute('data-brand');
+                    if (brand) {
+                        window.location.href = 'aliado-detalle.html?brand=' + encodeURIComponent(brand);
+                    }
+                });
+            });
         });
     </script>
     <script src="assets/js/script.js" defer></script>

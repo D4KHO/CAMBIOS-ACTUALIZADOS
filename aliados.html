@@ -252,71 +252,79 @@
     <script>
         // ── Datos de aliados ──────────────────────────────────
         // Para agregar aliados reales, simplemente edite este array.
-        // Cada aliado tiene: nombre, categoria (restaurantes|salud|hogar), imagen, descuento, enlace (opcional)
+        // Cada aliado tiene: nombre, slug, categoria, imagen, descuento, enlace (opcional)
         const ALIADOS = [
             {
                 nombre: 'Alquimia Vida',
+                slug: 'alquimia-vida',
                 categoria: 'hogar',
                 categoriaLabel: 'Hogar',
                 imagen: 'assets/img/marca-hogarplus.svg',
                 descuento: 'Hasta un 10% de descuento',
-                enlace: '#'
+                enlace: 'aliado-detalle.html?brand=alquimia-vida'
             },
             {
                 nombre: 'Resuelve Servicios Generales',
+                slug: 'resuelve-servicios',
                 categoria: 'hogar',
                 categoriaLabel: 'Hogar',
                 imagen: 'assets/img/marca-dekolinea.svg',
                 descuento: 'Hasta un 30% de descuento',
-                enlace: '#'
+                enlace: 'aliado-detalle.html?brand=resuelve-servicios'
             },
             {
                 nombre: 'Pronto Salud',
+                slug: 'pronto-salud',
                 categoria: 'salud',
                 categoriaLabel: 'Salud y Seguros',
                 imagen: 'assets/img/marca-saludnova.svg',
                 descuento: 'Hasta un 50% de descuento',
-                enlace: '#'
+                enlace: 'aliado-detalle.html?brand=pronto-salud'
             },
             {
                 nombre: 'QuiroPlus',
+                slug: 'quiroplus',
                 categoria: 'salud',
                 categoriaLabel: 'Salud y Seguros',
                 imagen: 'assets/img/marca-clinica-nortesur.svg',
                 descuento: 'Hasta un 50% de descuento',
-                enlace: '#'
+                enlace: 'aliado-detalle.html?brand=quiroplus'
             },
             {
                 nombre: 'CasaCafe',
+                slug: 'casacafe',
                 categoria: 'restaurantes',
                 categoriaLabel: 'Restaurantes & Cafés',
                 imagen: 'assets/img/marca-casacafe.svg',
                 descuento: 'Hasta un 15% de descuento',
-                enlace: '#'
+                enlace: 'aliado-detalle.html?brand=casacafe'
             },
             {
                 nombre: 'VidaMarket',
+                slug: 'vidamarket',
                 categoria: 'restaurantes',
                 categoriaLabel: 'Restaurantes & Cafés',
                 imagen: 'assets/img/marca-vidamarket.svg',
                 descuento: 'Hasta un 20% de descuento',
-                enlace: '#'
+                enlace: 'aliado-detalle.html?brand=vidamarket'
             },
             {
                 nombre: 'FitBarrio',
+                slug: 'fitbarrio',
                 categoria: 'salud',
                 categoriaLabel: 'Salud y Seguros',
                 imagen: 'assets/img/marca-fitbarrio.svg',
                 descuento: 'Hasta un 25% de descuento',
-                enlace: '#'
+                enlace: 'aliado-detalle.html?brand=fitbarrio'
             },
             {
                 nombre: 'MundoMuebles',
+                slug: 'mundomuebles',
                 categoria: 'hogar',
                 categoriaLabel: 'Hogar',
                 imagen: 'assets/img/marca-mundomuebles.svg',
                 descuento: 'Hasta un 15% de descuento',
-                enlace: '#'
+                enlace: 'aliado-detalle.html?brand=mundomuebles'
             }
         ];
 
@@ -378,13 +386,13 @@
             }
 
             grid.innerHTML = filtered.map(aliado => `
-                <article class="aliado-card">
+                <article class="aliado-card" style="cursor:pointer;" onclick="window.location.href='${aliado.enlace}'">
                     <div class="aliado-card-image">
                         <img src="${aliado.imagen}" alt="${aliado.nombre}" loading="lazy" width="320" height="240">
                         <span class="aliado-card-badge ${CAT_BADGE_CLASS[aliado.categoria] || ''}">${aliado.categoriaLabel}</span>
                     </div>
                     <div class="aliado-card-body">
-                        <h3 class="aliado-card-name"><a href="${aliado.enlace || '#'}">${aliado.nombre.toUpperCase()}</a></h3>
+                        <h3 class="aliado-card-name"><a href="${aliado.enlace}">${aliado.nombre.toUpperCase()}</a></h3>
                         <p class="aliado-card-discount">${aliado.descuento.toUpperCase()}</p>
                     </div>
                 </article>
