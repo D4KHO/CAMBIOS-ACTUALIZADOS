@@ -124,12 +124,52 @@ main.aliado-detalle-main {
 
 .aliado-detalle-grid {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 3rem;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
     align-items: start;
 }
 
-/* ── Columna izquierda: Logo / imagen ────────── */
+/* ── Columna izquierda: Logo + Info ──────────── */
+.aliado-detalle-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* ── Columna derecha: Croquis ────────────────── */
+.aliado-croquis-container {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 16px;
+    padding: 1.8rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 100px; /* makes it follow you when scrolling */
+}
+
+.croquis-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #081a4b;
+    margin: 0 0 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.croquis-image-wrapper {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.croquis-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* ── Logo / imagen ────────── */
 .aliado-detalle-image {
     background: #ffffff;
     border: 1px solid #e8e8e8;
@@ -138,7 +178,7 @@ main.aliado-detalle-main {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 320px;
+    min-height: 280px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 

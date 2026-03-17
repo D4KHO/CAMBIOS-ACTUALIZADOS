@@ -436,3 +436,34 @@ main {
     }
 }
 
+    .club-associate-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 2.8rem;
+    }
+
+
+@media (max-width: 768px) {
+    main {
+        margin-top: 0;
+    }
+
+    .club-video-section {
+        margin-top: -60px;
+    }
+
+    .club-contact-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .club-contact-btn {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+
+    .club-associate-form-block {
+        padding: 1.5rem 0.9rem 0.2rem;
+    }
+}
+
