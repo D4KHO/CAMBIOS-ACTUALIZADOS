@@ -124,14 +124,6 @@ html {
     overflow-x: hidden;
 }
 
-/* Escalar automáticamente "zoom" en pantallas mayores a 1280px 
-   para que se vea idéntico a una pantalla de 1280px. */
-@media (min-width: 1281px) {
-    body {
-        zoom: calc(100vw / 1280);
-    }
-}
-
 .btn-hero {
     background: #eac736;
     color: var(--white);

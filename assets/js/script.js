@@ -1,3 +1,18 @@
+// Ajustar zoom dinámico para pantallas grandes (mayores a 1280px)
+function adjustZoomForLargeScreens() {
+    if (window.innerWidth > 1280) {
+        document.body.style.zoom = (window.innerWidth / 1280);
+    } else {
+        document.body.style.zoom = '';
+    }
+}
+window.addEventListener('resize', adjustZoomForLargeScreens);
+if (document.body) {
+    adjustZoomForLargeScreens();
+} else {
+    document.addEventListener('DOMContentLoaded', adjustZoomForLargeScreens);
+}
+
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) {
