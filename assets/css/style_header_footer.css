@@ -115,13 +115,23 @@ body {
     background-color: var(--white);
 }
 
-body,
 html {
     margin: 0;
     padding: 0;
     width: 100%;
-    max-width: 100%;
+    background-color: #f7f7f7;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 1280px;
     overflow-x: hidden;
+    background-color: var(--white);
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05); /* Optional subtile shadow */
+    position: relative;
 }
 
 .btn-hero {
@@ -209,8 +219,10 @@ html {
     box-shadow: var(--shadow-soft);
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1280px;
     z-index: 50;
     transition: all 0.3s ease;
     padding: 0;
@@ -220,8 +232,10 @@ html {
     background: var(--white);
     box-shadow: var(--shadow-soft);
     top: 0;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1280px;
     z-index: 50;
     transition: all 0.3s ease;
     padding: 0;
