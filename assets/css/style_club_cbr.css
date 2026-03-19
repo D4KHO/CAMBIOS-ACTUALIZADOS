@@ -128,7 +128,7 @@ main {
 }
 
 .club-about-inner h2 {
-    font-size: clamp(1.4rem, 1.5vw, 2rem);
+    font-size: 1.35rem;
     color: #081a4b;
     margin: 0 0 1rem;
     line-height: 1.25;
