@@ -18,7 +18,7 @@ main {
     width: 100%;
     display: block;
     object-fit: cover;
-    max-height: 477px;
+    max-height: 497px;
     object-position: center 62%;
 }
 
@@ -45,8 +45,8 @@ main {
 
 .club-video-logo-tr {
     position: absolute;
-    top: clamp(1rem, 3vw, 2rem);
-    right: clamp(1rem, 3vw, 2rem);
+    top: clamp(1rem, 3vw, 1rem);
+    right: clamp(2rem, 5vw, 3rem);
     width: clamp(80px, 12vw, 140px);
     height: auto;
     z-index: 10;

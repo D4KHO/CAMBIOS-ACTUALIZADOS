@@ -202,8 +202,6 @@ html {
     height: 2rem;
 }
 
-
-
 .main-header {
     background: var(--white);
     box-shadow: var(--shadow-soft);
@@ -249,12 +247,12 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: 0.6rem 0;
     transition: all 0.3s ease;
 }
 
 .main-header.scrolled .header-content {
-    padding: 0.5rem 0;
+    padding: 0.3rem 0;
 }
 
 a {
@@ -315,12 +313,12 @@ a:hover {
 .logo {
     display: flex;
     align-items: center;
-    height: 120px !important;
+    height: 85px !important;
     transition: all 0.3s ease;
 }
 
 .logo-img {
-    height: 120px !important;
+    height: 85px !important;
     width: auto !important;
     display: block;
     max-width: 300px !important;
