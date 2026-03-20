@@ -184,6 +184,7 @@ main.aliados-main {
     object-fit: contain;
     display: block;
     padding: 1rem;
+    box-sizing: border-box;
 }
 
 .aliado-card-badge {
