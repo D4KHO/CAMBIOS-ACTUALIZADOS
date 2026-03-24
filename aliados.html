@@ -84,9 +84,12 @@
                         placeholder="Texto o palabra clave...">
                     <select class="aliados-select" id="aliadosCategory">
                         <option value="">Todas las categorías</option>
-                        <option value="restaurantes">Restaurantes & Cafés</option>
-                        <option value="salud">Salud & Bienestar</option>
+                        <option value="restaurantes">Restaurantes &amp; Cafés</option>
+                        <option value="salud">Salud &amp; Bienestar</option>
                         <option value="hogar">Hogar</option>
+                        <option value="servicios-hogar">Servicios para el hogar</option>
+                        <option value="educacion">Educación &amp; Formación</option>
+                        <option value="mascotas">Mundo Mascota</option>
                     </select>
                 </div>
             </div>
@@ -352,6 +355,15 @@
                 imagen: 'assets/img/Logo_Pocion_2024 (Negro).png',
                 descuento: 'Hasta un 15% de descuento',
                 enlace: 'aliado-detalle.html?brand=pocion'
+            },
+            {
+                nombre: 'Gassel S.A.C',
+                slug: 'gassel',
+                categoria: 'servicios-hogar',
+                categoriaLabel: 'Servicios para el hogar',
+                imagen: 'assets/img/Gassel-Photoroom.png',
+                descuento: 'Descuentos exclusivos para socios',
+                enlace: 'aliado-detalle.html?brand=gassel'
             }
         ];
 
@@ -359,13 +371,19 @@
         const CAT_LABELS = {
             'restaurantes': 'Restaurantes & Cafés',
             'salud': 'Salud & Bienestar',
-            'hogar': 'Artículos para el Hogar'
+            'hogar': 'Artículos para el Hogar',
+            'servicios-hogar': 'Servicios para el hogar',
+            'educacion': 'Educación & Formación',
+            'mascotas': 'Mundo Mascota'
         };
 
         const CAT_BADGE_CLASS = {
             'restaurantes': 'badge-restaurantes',
             'salud': 'badge-salud',
-            'hogar': 'badge-hogar'
+            'hogar': 'badge-hogar',
+            'servicios-hogar': 'badge-hogar',
+            'educacion': 'badge-salud',
+            'mascotas': 'badge-restaurantes'
         };
 
         // ── DOM ────────────────────────────────────────────────
