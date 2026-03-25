@@ -73,7 +73,7 @@ main.aliados-main {
 /* ── FILTERS ─────────────────────────────────── */
 .aliados-filters-section {
     padding: 2rem 0 0;
-    background: #f8f8f8;
+    background: #ffffff;
 }
 
 .aliados-filters {
@@ -134,7 +134,7 @@ main.aliados-main {
 /* ── ALLIES GRID ─────────────────────────────── */
 .aliados-grid-section {
     padding: 2rem 0 4rem;
-    background: #f8f8f8;
+    background: #ffffff;
     min-height: 400px;
 }
 
@@ -159,6 +159,7 @@ main.aliados-main {
     background: #ffffff;
     border-radius: 14px;
     overflow: hidden;
+    border: 1px solid #e5e7eb;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     display: flex;
@@ -185,6 +186,7 @@ main.aliados-main {
     display: block;
     padding: 1rem;
     box-sizing: border-box;
+    background: white;
 }
 
 .aliado-card-badge {
@@ -289,7 +291,7 @@ main.aliados-main {
 
 @media (min-width: 1024px) {
     .aliados-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
