@@ -20,6 +20,9 @@ main {
     object-fit: cover;
     max-height: 500px;
     object-position: center 65%;
+    /* GPU compositing: prevents video repaint from blocking scroll */
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .club-video-overlay {
@@ -144,6 +147,9 @@ main {
 /* ── 4. ALIADOS ESTRATÉGICOS ─────────────────── */
 .club-allies-section {
     padding: 4rem 0 5rem;
+    /* Skip rendering until near viewport — big scroll perf win */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 1200px;
 }
 
 .club-allies-header {
@@ -176,8 +182,11 @@ main {
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-    transition: transform 0.2s, box-shadow 0.2s;
+    /* Only transition transform (GPU), not box-shadow (CPU repaint) */
+    transition: transform 0.2s ease;
     aspect-ratio: 4 / 4;
+    /* Promote to own layer */
+    will-change: transform;
 }
 
 .club-ally-link {
@@ -187,7 +196,7 @@ main {
 }
 
 .club-ally-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) translateZ(0);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
 }
 

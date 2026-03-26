@@ -943,8 +943,17 @@ document.addEventListener('DOMContentLoaded', function () {
         progressBar.style.width = Math.min(scrollPercent, 100) + '%';
     }
 
-    // Eventos
-    window.addEventListener('scroll', updateScrollProgress);
+    // Eventos (throttled via rAF for scroll performance)
+    var scrollProgressTicking = false;
+    window.addEventListener('scroll', function () {
+        if (!scrollProgressTicking) {
+            requestAnimationFrame(function () {
+                updateScrollProgress();
+                scrollProgressTicking = false;
+            });
+            scrollProgressTicking = true;
+        }
+    });
     window.addEventListener('resize', updateScrollProgress);
     updateScrollProgress();
 });
