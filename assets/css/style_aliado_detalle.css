@@ -264,21 +264,71 @@ main.aliado-detalle-main {
     color: #eac736;
 }
 
-/* ── Sección "Para usar tus beneficios" ──────── */
+/* ── Sección "Para usar tus beneficios" (Acordeón Suave Puro CSS) ──────── */
 .aliado-como-usar {
     background: #f8f9fa;
     border-radius: 12px;
-    padding: 1.5rem 1.8rem;
+    padding: 1.2rem 1.8rem;
     border-left: 4px solid #081a4b;
+    position: relative;
 }
 
-.aliado-como-usar h3 {
+.dropdown-checkbox {
+    display: none;
+}
+
+.dropdown-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.dropdown-summary h3 {
     font-size: 1rem;
     font-weight: 700;
     color: #1a1a1a;
-    margin: 0 0 1rem;
+    margin: 0;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+}
+
+.dropdown-summary svg {
+    width: 20px;
+    height: 20px;
+    color: #081a4b;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-checkbox:checked + .dropdown-summary svg {
+    transform: rotate(180deg);
+}
+
+.dropdown-content-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content {
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 1px solid transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-checkbox:checked ~ .dropdown-content-wrapper {
+    grid-template-rows: 1fr;
+}
+
+.dropdown-checkbox:checked ~ .dropdown-content-wrapper .dropdown-content {
+    opacity: 1;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top-color: #e8e8e8;
 }
 
 .aliado-como-usar .pasos-list {

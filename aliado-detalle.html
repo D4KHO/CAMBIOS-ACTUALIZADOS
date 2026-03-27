@@ -127,12 +127,22 @@
                                 <a href="#" id="detalle-conoce-link" target="_blank" rel="noopener noreferrer">AQUÍ</a>
                             </p>
 
-                            <!-- Cómo usar tus beneficios -->
+                            <!-- Cómo usar tus beneficios (Acordeón CSS puro) -->
                             <div class="aliado-como-usar">
-                                <h3>Para usar tus beneficios:</h3>
-                                <ul class="pasos-list" id="detalle-pasos">
-                                    <!-- Se llena con JS -->
-                                </ul>
+                                <input type="checkbox" id="toggle-terminos" class="dropdown-checkbox" aria-hidden="true">
+                                <label for="toggle-terminos" class="dropdown-summary">
+                                    <h3>Términos y condiciones</h3>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </label>
+                                <div class="dropdown-content-wrapper">
+                                    <div class="dropdown-content">
+                                        <ul class="pasos-list" id="detalle-pasos">
+                                            <!-- Se llena con JS -->
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Texto club -->
@@ -539,14 +549,14 @@
                 telefonoRaw: '+51946552086',
                 intro: '<strong>MACACO HELADO</strong> ofrece deliciosos helados artesanales para disfrutar en familia',
                 beneficios: [
-                    '10% de descuento en todas las presentaciones de helado artesanal.',
-                    'Topping extra gratis en tu primera compra.',
-                    'Promociones especiales en fechas festivas.'
+                    '10% de descuento en toda la carta.'
                 ],
                 pasos: [
-                    'Acércate a MACACO HELADO con tu DNI titular.',
-                    'Espera se realice la validación respectiva.',
-                    'Verifica los términos y condiciones vigentes.'
+                    'Comunícate para tu pedido por delivery mencionando tu DNI titular.',
+                    'Espera a que se realice la validación respectiva.',
+                    'No acumulable con otras promociones.',
+                    'Válido solo para ventas por delivery.',
+                    'No aplica para ventas por Rappi o Pedidos Ya.'
                 ],
                 enlaceExterno: '#'
             },
@@ -562,14 +572,14 @@
                 telefonoRaw: '+51946552086',
                 intro: '<strong>WINGS GRILL</strong> te ofrece deliciosas parrillas para disfrutar en familia',
                 beneficios: [
-                    '16% de descuento en toda la carta.',
-                    'Bebida de cortesía por cumpleaños.',
-                    'Promociones exclusivas para socios.'
+                    '16% de descuento en todas las presentaciones de alitas de pollo y bebidas sin alcohol.'
                 ],
                 pasos: [
                     'Acércate a WINGS GRILL con tu DNI titular.',
                     'Espera se realice la validación respectiva.',
-                    'Verifica los términos y condiciones vigentes.'
+                    'Monto máximo de compra: 100 soles.',
+                    'Válido para ser utilizado 1 vez al mes.',
+                    'Válido para los días martes, miércoles y jueves en el horario comprendido entre las 4pm y 7pm.'
                 ],
                 enlaceExterno: '#'
             },
@@ -585,14 +595,17 @@
                 telefonoRaw: '+51946552086',
                 intro: '<strong>POCIÓN</strong> te ofrece deliciosos platillos y bebidas para disfrutar en familia',
                 beneficios: [
-                    '15% de descuento en consumo general.',
-                    'Bebida de cortesía en tu primera visita.',
-                    'Promociones exclusivas para clientes Club CBR.'
+                    '15% de descuento en nuestra carta.'
                 ],
                 pasos: [
                     'Acércate a POCIÓN con tu DNI titular.',
                     'Espera se realice la validación respectiva.',
-                    'Verifica los términos y condiciones vigentes.'
+                    'Válido para un descuento máximo de S/100 por cuenta y/o mesa.',
+                    'Descuento no aplica para botellas y/o promociones del día.',
+                    'Válido para consumo en salón. No es válido para delivery.',
+                    'No es válido para feriados ni días festivos.',
+                    'Descuento no acumulable ni válido con otras promociones.',
+                    'Válido para pagos con efectivo, tarjeta de Débito o Crédito.'
                 ],
                 enlaceExterno: '#'
             },
@@ -606,16 +619,18 @@
                 direccion: 'Piura, Perú',
                 telefono: '(+51) 946 552 086',
                 telefonoRaw: '+51946552086',
-                intro: '<strong>GASSEL S.A.C</strong> ofrece servicios para el hogar con beneficios exclusivos para los socios del Club CBR',
+                intro: '<strong>GASSEL S.A.C</strong> ofrece balones de gas con beneficios exclusivos para los socios del Club CBR',
                 beneficios: [
-                    '16% de descuento en servicios para el hogar.',
-                    'Atención preferencial para clientes Club CBR.',
-                    'Consulta los beneficios vigentes directamente con el aliado.'
+                    '16% de descuento en balones de gas de 10 kg.'
                 ],
                 pasos: [
-                    'Acércate a GASSEL S.A.C con tu DNI titular.',
-                    'Espera se realice la validación respectiva.',
-                    'Verifica los términos y condiciones vigentes.'
+                    'Solicita tu pedido a GASSEL S.A.C indicando tu DNI titular.',
+                    'Espera a que se realice la validación respectiva.',
+                    'Aplica para reparto en los distritos de Castilla y Piura.',
+                    'Válido todos los días en el horario de atención de 7:30 am a 6:00 pm.',
+                    'Precio acorde al mercado y está sujeto a variación.',
+                    'Los pagos deben ser en efectivo o a través del aplicativo Yape.',
+                    'Aplica hasta 2 balones de gas por mes por persona.'
                 ],
                 enlaceExterno: '#'
             },
