@@ -147,9 +147,8 @@ main {
 /* ── 4. ALIADOS ESTRATÉGICOS ─────────────────── */
 .club-allies-section {
     padding: 4rem 0 5rem;
-    /* Skip rendering until near viewport — big scroll perf win */
-    content-visibility: auto;
-    contain-intrinsic-size: auto 1200px;
+    /* contain solo layout/style, NO content-visibility (evita reflow masivo al scroll) */
+    contain: layout style;
 }
 
 .club-allies-header {
@@ -175,6 +174,7 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.2rem;
+    /* Sin contain:layout — permite que el browser mantenga bitmaps en memoria al scroll */
 }
 
 .club-ally-card {
@@ -182,11 +182,11 @@ main {
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-    /* Only transition transform (GPU), not box-shadow (CPU repaint) */
+    /* Solo transform en GPU, sin box-shadow animado */
     transition: transform 0.2s ease;
     aspect-ratio: 4 / 4;
-    /* Promote to own layer */
-    will-change: transform;
+    /* will-change solo en hover, no permanente (ahorra memoria GPU) */
+    will-change: auto;
 }
 
 .club-ally-link {
@@ -196,6 +196,7 @@ main {
 }
 
 .club-ally-card:hover {
+    will-change: transform;
     transform: translateY(-4px) translateZ(0);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
 }
@@ -205,6 +206,9 @@ main {
     height: 100%;
     object-fit: cover;
     display: block;
+    /* Mantiene el bitmap decodificado en capa GPU: evita re-decodificación al volver al viewport */
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .club-ally-card h3 {
@@ -436,6 +440,7 @@ main {
 
 /* ── RESPONSIVE ──────────────────────────────── */
 @media (min-width: 640px) {
+    /* 3 columnas arriba + 3 abajo = grid 3×2 */
     .club-allies-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
