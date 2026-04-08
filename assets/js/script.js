@@ -1094,3 +1094,41 @@ function initFloatingNotice() {
 }
 
 document.addEventListener('DOMContentLoaded', initFloatingNotice);
+
+/* ── CTA DROPDOWN  Consulta tus beneficios ── */
+function toggleCtaDropdown(e) {
+    e.stopPropagation();
+    var menu    = document.getElementById('ctaDropdownMenu');
+    var chevron = document.getElementById('ctaChevron');
+    var btn     = document.getElementById('ctaDropdownBtn');
+    if (!menu) return;
+    var isOpen = menu.classList.contains('open');
+    menu.classList.toggle('open', !isOpen);
+    chevron.classList.toggle('open', !isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+}
+
+document.addEventListener('click', function (e) {
+    var wrapper = document.getElementById('ctaDropdownWrapper');
+    if (wrapper && !wrapper.contains(e.target)) {
+        var menu    = document.getElementById('ctaDropdownMenu');
+        var chevron = document.getElementById('ctaChevron');
+        var btn     = document.getElementById('ctaDropdownBtn');
+        if (!menu) return;
+        menu.classList.remove('open');
+        chevron.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+    }
+});
+
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+        var menu    = document.getElementById('ctaDropdownMenu');
+        var chevron = document.getElementById('ctaChevron');
+        var btn     = document.getElementById('ctaDropdownBtn');
+        if (!menu) return;
+        menu.classList.remove('open');
+        chevron.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+    }
+});

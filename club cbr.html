@@ -53,8 +53,16 @@
                     <a href="blog.html" class="nav-link">Blog</a>
                 </nav>
 
-                <div class="cta-button">
-                    <button class="btn btn-hero" onclick="openWhatsApp()">¡Consulta Aquí!</button>
+                <div class="cta-button cta-dropdown-wrapper" id="ctaDropdownWrapper">
+                    <button class="btn btn-hero" id="ctaDropdownBtn" aria-haspopup="true" aria-expanded="false" onclick="toggleCtaDropdown(event)">Consulta tus beneficios <span class="cta-chevron" id="ctaChevron">&#9660;</span></button>
+                    <div class="cta-dropdown-menu" id="ctaDropdownMenu" role="menu">
+                        <a class="cta-dropdown-item" href="https://wa.me/51946552086?text=Hola%2C%20a%C3%BAn%20no%20soy%20cliente%20y%20quisiera%20conocer%20los%20beneficios%20del%20Club%20CBR." target="_blank" rel="noopener noreferrer" role="menuitem">
+                            <span class="cta-drop-icon">&#128100;</span> Aún no soy cliente
+                        </a>
+                        <a class="cta-dropdown-item" href="https://wa.me/51922902122?text=Hola%2C%20soy%20cliente%20y%20quisiera%20consultar%20mis%20beneficios%20del%20Club%20CBR." target="_blank" rel="noopener noreferrer" role="menuitem">
+                            <span class="cta-drop-icon">&#11088;</span> Ya soy cliente
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -428,6 +436,8 @@
         </div>
     </footer>
 
+
+
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -493,6 +503,9 @@
             }
         });
     </script>
+
+
+
     <script src="assets/js/script.js" defer></script>
 </body>
 
