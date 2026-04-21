@@ -93,7 +93,7 @@
         <section class="club-contact-section">
             <div class="container">
                 <div class="club-contact-row">
-                    <a href="mailto:info@casabonita.pe" class="club-contact-btn club-contact-mail">
+                    <a href="#club-associate-form-block" class="club-contact-btn club-contact-mail">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="club-contact-icon">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                             <polyline points="22,6 12,12 2,6"/>
@@ -223,7 +223,7 @@
                         </button>
                     </div>
 
-                    <div class="club-associate-form-block">
+                    <div class="club-associate-form-block" id="club-associate-form-block">
                         <h4>FORMA PARTE DE NUESTROS SOCIOS ALIADOS</h4>
                         <p>Déjanos tus datos y te contactaremos</p>
                         <form class="club-associate-form" action="#" method="post">
@@ -454,6 +454,20 @@
                     }
                 });
             });
+
+            // Scroll suave al formulario desde el botón "Contacto"
+            var contactAnchor = document.querySelector('a[href="#club-associate-form-block"]');
+            var formBlock = document.getElementById('club-associate-form-block');
+            if (contactAnchor && formBlock) {
+                contactAnchor.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    var header = document.querySelector('.main-header');
+                    var headerOffset = header ? header.offsetHeight + 16 : 16;
+                    formBlock.style.scrollMarginTop = headerOffset + 'px';
+                    formBlock.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    history.replaceState(null, '', '#club-associate-form-block');
+                });
+            }
         });
     </script>
     <!-- Performance: pause video off-screen & optimize scroll listeners -->
