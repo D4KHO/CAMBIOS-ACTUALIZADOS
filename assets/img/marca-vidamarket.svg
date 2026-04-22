@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" role="img" aria-label="Marca ficticia VidaMarket">
-  <rect width="320" height="120" rx="18" fill="#fff0f1"/>
-  <rect x="40" y="44" width="66" height="40" rx="10" fill="#d94f5d"/>
-  <circle cx="58" cy="88" r="6" fill="#b53e4a"/>
-  <circle cx="88" cy="88" r="6" fill="#b53e4a"/>
-  <rect x="126" y="46" width="150" height="12" rx="6" fill="#c8404f"/>
-  <rect x="126" y="66" width="110" height="12" rx="6" fill="#ea6f7b"/>
-</svg>
